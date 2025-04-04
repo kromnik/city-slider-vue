@@ -1,0 +1,29 @@
+@use "sass:math";
+@use "./styles/variables.scss";
+@use "./styles/reset.scss";
+
+:root {
+  font-family: variables.$font-family-base;
+  line-height: variables.$line-height-base;
+  font-weight: variables.$font-weight-normal;
+  --bg-color: #FFFFFF;
+  --primary-color: #000000;
+  --inverted-primary-color: #4285F4;;
+  --secondary-color: #d7d7d7;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-width: 320px;
+  background-color: var(--bg-color);
+}
+
+.dark-theme {
+  --bg-color: #202020;
+  --primary-color: #4285F4;
+  --inverted-primary-color: #EE3465;
+  --secondary-color: #7ec1f4;
+}
