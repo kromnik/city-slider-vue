@@ -47,7 +47,7 @@ City Slider Vue - небольшое веб-приложение в виде п�
 
 1. Клонируйте репозиторий:
     ```
-    git clone https://git@github.com:kromnik/city-slider.git
+    git@github.com:kromnik/city-slider-vue.git
     ```
 
 2. Перейдите в директорию проекта:
