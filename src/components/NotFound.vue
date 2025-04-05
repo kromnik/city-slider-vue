@@ -22,16 +22,12 @@ import { onMounted } from "vue";
 import Header from "./Header.vue";
 import { useTheme } from "@/utils/useTheme";
 
-const { theme } = useTheme();
+const { theme, setTheme } = useTheme();
 console.log("Theme in NotFound:", theme.value);
 
 // Добавляем слушатель при монтировании
 onMounted(() => {
-  if (theme.value === "dark") {
-    document.documentElement.classList.add("dark-theme");
-  } else {
-    document.documentElement.classList.remove("dark-theme");
-  }
+  setTheme(theme.value); // Устанавливаем тему при монтировании
 });
 </script>
 
