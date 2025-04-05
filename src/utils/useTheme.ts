@@ -1,13 +1,8 @@
 import { ref } from "vue";
 
-// Создаем единый ref для темы
-const theme = ref(localStorage.getItem("theme") || "light");
-if (theme.value === "dark") {
-  document.documentElement.classList.add("dark-theme");
-} else {
-  document.documentElement.classList.remove("dark-theme");
-}
-
+// Создаем единый ref (синглтон) для темы
+const theme = ref(localStorage.getItem("theme") || "light")
+// Устанавливаем класс на html элемент в зависимости от темы
 export function useTheme() {
   const setTheme = (newTheme: string) => {
     theme.value = newTheme;
@@ -20,5 +15,9 @@ export function useTheme() {
     }
   };
 
+  setTheme(theme.value); // Устанавливаем начальную тему при загрузке
+
   return { theme, setTheme };
 }
+
+
