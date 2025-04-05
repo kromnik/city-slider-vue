@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch, onMounted, onUnmounted, computed } from "vue";
+import { watch, computed } from "vue";
 import { useTheme } from "@/utils/useTheme";
 import closeIconDark from "@/assets/icons/btn-close_dark.svg";
 import closeIconNormal from "@/assets/icons/btn-close_normal.svg";
@@ -67,16 +67,6 @@ const handleSubmit = () => {
     props.onSubmit();
   }
 };
-
-onMounted(() => {
-  if (props.isOpen) {
-    window.addEventListener("keydown", handleKeyDown);
-  }
-});
-
-onUnmounted(() => {
-  window.removeEventListener("keydown", handleKeyDown);
-});
 
 watch(
   () => props.isOpen,
