@@ -50,16 +50,6 @@ const handleKeyDown = (e: KeyboardEvent) => {
   }
 };
 
-onMounted(() => {
-  if (props.isOpen) {
-    window.addEventListener("keydown", handleKeyDown);
-  }
-});
-
-onUnmounted(() => {
-  window.removeEventListener("keydown", handleKeyDown);
-});
-
 watch(
   () => props.isOpen,
   (newVal) => {
